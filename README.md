@@ -1,0 +1,1 @@
+# Mathemtica---Tabelo-nedolo-enih-integralov
