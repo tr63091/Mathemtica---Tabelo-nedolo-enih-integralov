@@ -1,0 +1,220 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[{RowBox[{RowBox[{"ClearAll","[","\"Global`*\"","]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"podaci"," ","="," ",RowBox[{"{","\n","   ",RowBox[{RowBox[
+{"{",RowBox[{"1",","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[{RowBox[
+{"x","^","n"}],","," ","\"n != -1\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[{RowBox[
+{"1","/","x"}],","," ","\"x != 0\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[{RowBox[
+{"E","^","x"}],","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[{RowBox[
+{"a","^","x"}],","," ","\"a > 0, a != 1\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"Sin","[","x","]"}],","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"Cos","[","x","]"}],","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"Tan","[","x","]"}],","," ","\"x != \[Pi]/2 + k\[Pi]\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"Cot","[","x","]"}],","," ","\"x != k\[Pi]\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"1","/",RowBox[{RowBox[{"Cos","[","x","]"}],"^","2"}]}],","," ","\"x != \[Pi]/2 + k\[Pi]\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"1","/",RowBox[{RowBox[{"Sin","[","x","]"}],"^","2"}]}],","," ","\"x != k\[Pi]\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"1","/",RowBox[{"Sqrt","[",RowBox[{"1"," ","-"," ",RowBox[{"x","^","2"}]}],"]"}]}],","," ","\"|x| < 1\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"1","/",RowBox[{"(",RowBox[{"1"," ","+"," ",RowBox[{"x","^","2"}]}],")"}]}],","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"1","/",RowBox[{"Sqrt","[",RowBox[{RowBox[{"a","^","2"}]," ","-"," ",RowBox[
+{"x","^","2"}]}],"]"}]}],","," ","\"|x| < |a|\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"1","/",RowBox[{"(",RowBox[{RowBox[{"a","^","2"}]," ","+"," ",RowBox[{"x","^","2"}]}],")"}]}],","," ","\"a != 0\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"1","/",RowBox[{"(",RowBox[{RowBox[{"x","^","2"}]," ","-"," ",RowBox[
+{"a","^","2"}]}],")"}]}],","," ","\"|x| != |a|\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"Sinh","[","x","]"}],","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"Cosh","[","x","]"}],","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"Log","[","x","]"}],","," ","\"x > 0\""}],"}"}],",","\n","   ",RowBox[{"{",RowBox[
+{RowBox[{"ArcSin","[","x","]"}],","," ","\"|x| <= 1\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"ArcTan","[","x","]"}],","," ","\"n/a\""}],"}"}],",","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"x","*",RowBox[{"E","^","x"}]}],","," ","\"n/a\""}],"}"}]}],"\n","}"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{RowBox[{"obradiRed","[",RowBox[{"{",RowBox[{"f_",","," ","uslov_"}],"}"}],"]"}]," ",":="," ",RowBox[
+{"Module","[",RowBox[{RowBox[{"{",RowBox[{"intExpr",","," ","resExpr"}],"}"}],",","\n","   ",RowBox[
+{RowBox[{"intExpr"," ","="," ",RowBox[{"TraditionalForm","[",RowBox[{"HoldForm","[",RowBox[
+{"Integrate","[",RowBox[{"f",","," ","x"}],"]"}],"]"}],"]"}]}],";","\n","   ",RowBox[
+{"resExpr"," ","="," ",RowBox[{"TraditionalForm","[",RowBox[{RowBox[{"Simplify","[",RowBox[
+{"Integrate","[",RowBox[{"f",","," ","x"}],"]"}],"]"}]," ","+"," ","C"}],"]"}]}],";","\n","   ",RowBox[
+{"{",RowBox[{RowBox[{"TraditionalForm","[","f","]"}],","," ","intExpr",","," ","resExpr",","," ",RowBox[
+{"Style","[",RowBox[{"uslov",","," ","Italic",","," ","11",","," ",RowBox[{"GrayLevel","[","0.3","]"}]}],"]"}]}],"}"}]}]}],"\n","]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"tabelaRedovi"," ","="," ",RowBox[{"Map","[",RowBox[
+{"obradiRed",","," ","podaci"}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[{RowBox[
+{"zaglavlje"," ","="," ",RowBox[{"{","\n","   ",RowBox[{RowBox[{"Style","[",RowBox[
+{"\"Funkcija f(x)\"",","," ","Bold",","," ","13",","," ",RowBox[{"Darker","[","Blue","]"}]}],"]"}],","," ","\n","   ",RowBox[
+{"Style","[",RowBox[{"\"Integral \[Integral] f(x) dx\"",","," ","Bold",","," ","13",","," ",RowBox[
+{"Darker","[","Blue","]"}]}],"]"}],","," ","\n","   ",RowBox[{"Style","[",RowBox[
+{"\"Rezultat (Neodre\:0111eni integral)\"",","," ","Bold",","," ","13",","," ",RowBox[
+{"Darker","[","Blue","]"}]}],"]"}],",","\n","   ",RowBox[{"Style","[",RowBox[{"\"Opombe / Pogoji\"",","," ","Bold",","," ","13",","," ",RowBox[
+{"Darker","[","Blue","]"}]}],"]"}]}],"\n","}"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"tabelaIntegrala"," ","="," ",RowBox[{"Grid","[","\n","   ",RowBox[{RowBox[
+{"Prepend","[",RowBox[{"tabelaRedovi",","," ","zaglavlje"}],"]"}],",","\n","   ",RowBox[
+{"Frame"," ","\[Rule]"," ","All"}],",","\n","   ",RowBox[{"FrameStyle"," ","\[Rule]"," ",RowBox[
+{"Directive","[",RowBox[{RowBox[{"Thickness","[","1","]"}],","," ",RowBox[{"GrayLevel","[","0.75","]"}]}],"]"}]}],",","\n","   ",RowBox[
+{"Background"," ","\[Rule]"," ",RowBox[{"{","\n","      ",RowBox[{"None",","," ","\n","      ",RowBox[
+{"{",RowBox[{RowBox[{"RGBColor","[",RowBox[{"0.9",","," ","0.93",","," ","0.98"}],"]"}],","," ",RowBox[
+{"Table","[",RowBox[{RowBox[{"If","[",RowBox[{RowBox[{"EvenQ","[","i","]"}],","," ","White",","," ",RowBox[
+{"RGBColor","[",RowBox[{"0.96",","," ","0.97",","," ","1.0"}],"]"}]}],"]"}],","," ",RowBox[
+{"{",RowBox[{"i",","," ",RowBox[{"Length","[","podaci","]"}]}],"}"}]}],"]"}]}],"}"}]}],"\n","   ","}"}]}],",","\n","   ",RowBox[
+{"ItemMargins"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{"1.5",","," ","1.5"}],"}"}],","," ",RowBox[
+{"{",RowBox[{"0.8",","," ","0.8"}],"}"}]}],"}"}]}],",","\n","   ",RowBox[{"Alignment"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Center",","," ","Center"}],"}"}]}]}],"\n","]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"dokument"," ","="," ",RowBox[{"Column","[",RowBox[{RowBox[{"{","\n","   ",RowBox[
+{RowBox[{"Style","[",RowBox[{"\"Tabela nedolo\[CHacek]enih integralov\"",","," ","Bold",","," ","22",","," ",RowBox[
+{"Darker","[","Blue","]"}]}],"]"}],",","\n","   ",RowBox[{"Spacer","[","5","]"}],",","\n","   ",RowBox[
+{"Style","[",RowBox[{"\"Projektna naloga pri predmetu Ra\[CHacek]unalni\[SHacek]ka orodja v matematiki (FMF)\"",","," ","12",","," ","Italic",","," ",RowBox[
+{"Darker","[","Gray","]"}]}],"]"}],",","\n","   ",RowBox[{"Spacer","[","15","]"}],",","\n","   ","tabelaIntegrala",",","\n","   ",RowBox[
+{"Spacer","[","15","]"}],",","\n","   ",RowBox[{"Style","[",RowBox[{"\"Generirano s pomo\[CHacek]jo programa Wolfram Mathematica\"",","," ","10",","," ","Italic",","," ","Gray"}],"]"}]}],"\n","}"}],","," ",RowBox[
+{"Alignment"," ","\[Rule]"," ","Center"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Export","[",RowBox[{"\"Tabela_Nedolocenih_Integralov.pdf\"",","," ","dokument"}],"]"}],";"}],"\n","dokument"}],
+"Input",CellLabel -> "In[32]:= ",ExpressionUUID -> "d6ee4879-be39-4439-8c92-873d68aa2796"],Cell[
+BoxData[
+TagBox[GridBox[{{StyleBox["\"Tabela nedolo\[CHacek]enih integralov\"",Bold,22,RGBColor[
+0,0,Rational[2,3]],StripOnInput -> False]},{TemplateBox[{5},"Spacer1"]},{StyleBox[
+"\"Projektna naloga pri predmetu Ra\[CHacek]unalni\[SHacek]ka orodja v matematiki (FMF)\"",
+12,Italic,RGBColor[0.33333333333333337`,0.33333333333333337`,0.33333333333333337`],
+StripOnInput -> False]},{TemplateBox[{15},"Spacer1"]},{TagBox[GridBox[{{StyleBox[
+"\"Funkcija f(x)\"",Bold,13,RGBColor[0,0,Rational[2,3]],StripOnInput -> False],StyleBox[
+"\"Integral \[Integral] f(x) dx\"",Bold,13,RGBColor[0,0,Rational[2,3]],StripOnInput -> False],StyleBox[
+"\"Rezultat (Neodre\:0111eni integral)\"",Bold,13,RGBColor[0,0,Rational[2,3]],StripOnInput -> False],StyleBox[
+"\"Opombe / Pogoji\"",Bold,13,RGBColor[0,0,Rational[2,3]],StripOnInput -> False]},{TagBox[
+FormBox["1",TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[
+RowBox[{"\[Integral]",RowBox[{"1",RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],
+TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+","x"}],
+TraditionalForm],TraditionalForm,Editable -> True],StyleBox["\"n/a\"",Italic,11,GrayLevel[
+0.3`],StripOnInput -> False]},{TagBox[FormBox[SuperscriptBox["x","n"],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{SuperscriptBox["x","n"],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+",FractionBox[SuperscriptBox[
+"x",RowBox[{"n","+","1"}]],RowBox[{"n","+","1"}]]}],TraditionalForm],TraditionalForm,
+Editable -> True],StyleBox["\"n != -1\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[
+FormBox[FractionBox["1","x"],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{FractionBox["1","x"],RowBox[{"\[DifferentialD]","x"}]}]}],
+HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[
+{"C","+",RowBox[{"log","(","x",")"}]}],TraditionalForm],TraditionalForm,Editable -> True],StyleBox[
+"\"x != 0\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[FormBox[SuperscriptBox[
+"\[ExponentialE]","x"],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{SuperscriptBox["\[ExponentialE]","x"],RowBox[
+{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[RowBox[{"C","+",SuperscriptBox["\[ExponentialE]","x"]}],TraditionalForm],
+TraditionalForm,Editable -> True],StyleBox["\"n/a\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[
+FormBox[SuperscriptBox["a","x"],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{SuperscriptBox["a","x"],RowBox[{"\[DifferentialD]","x"}]}]}],
+HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[
+{FractionBox[SuperscriptBox["a","x"],RowBox[{"log","(","a",")"}]],"+","C"}],TraditionalForm],
+TraditionalForm,Editable -> True],StyleBox["\"a > 0, a != 1\"",Italic,11,GrayLevel[
+0.3`],StripOnInput -> False]},{TagBox[FormBox[RowBox[{"sin","(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{"sin","(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","-",RowBox[{"cos","(","x",")"}]}],
+TraditionalForm],TraditionalForm,Editable -> True],StyleBox["\"n/a\"",Italic,11,GrayLevel[
+0.3`],StripOnInput -> False]},{TagBox[FormBox[RowBox[{"cos","(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{"cos","(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+",RowBox[{"sin","(","x",")"}]}],
+TraditionalForm],TraditionalForm,Editable -> True],StyleBox["\"n/a\"",Italic,11,GrayLevel[
+0.3`],StripOnInput -> False]},{TagBox[FormBox[RowBox[{"tan","(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{"tan","(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","-",RowBox[{"log","(",RowBox[
+{"cos","(","x",")"}],")"}]}],TraditionalForm],TraditionalForm,Editable -> True],StyleBox[
+"\"x != \[Pi]/2 + k\[Pi]\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[
+FormBox[RowBox[{"cot","(","x",")"}],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{RowBox[{"cot","(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],
+HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[
+{"C","+",RowBox[{"log","(",RowBox[{"sin","(","x",")"}],")"}]}],TraditionalForm],TraditionalForm,
+Editable -> True],StyleBox["\"x != k\[Pi]\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[
+FormBox[RowBox[{SuperscriptBox["sec","2"],"(","x",")"}],TraditionalForm],TraditionalForm,
+Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{RowBox[{SuperscriptBox[
+"sec","2"],"(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+",RowBox[{"tan","(","x",")"}]}],
+TraditionalForm],TraditionalForm,Editable -> True],StyleBox["\"x != \[Pi]/2 + k\[Pi]\"",
+Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[FormBox[RowBox[{SuperscriptBox[
+"csc","2"],"(","x",")"}],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{RowBox[{SuperscriptBox["csc","2"],"(","x",")"}],RowBox[
+{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[RowBox[{"C","-",RowBox[{"cot","(","x",")"}]}],TraditionalForm],TraditionalForm,
+Editable -> True],StyleBox["\"x != k\[Pi]\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[
+FormBox[FractionBox["1",SqrtBox[RowBox[{"1","-",SuperscriptBox["x","2"]}]]],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{FractionBox["1",SqrtBox[RowBox[{"1","-",SuperscriptBox["x","2"]}]]],RowBox[{"\[DifferentialD]","x"}]}]}],
+HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[
+{"C","+",RowBox[{SuperscriptBox["sin",RowBox[{"-","1"}]],"(","x",")"}]}],TraditionalForm],
+TraditionalForm,Editable -> True],StyleBox["\"|x| < 1\"",Italic,11,GrayLevel[0.3`],
+StripOnInput -> False]},{TagBox[FormBox[FractionBox["1",RowBox[{SuperscriptBox["x",
+"2"],"+","1"}]],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[
+TagBox[RowBox[{"\[Integral]",RowBox[{FractionBox["1",RowBox[{"1","+",SuperscriptBox[
+"x","2"]}]],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],TraditionalForm,
+Editable -> True],TagBox[FormBox[RowBox[{"C","+",RowBox[{SuperscriptBox["tan",RowBox[
+{"-","1"}]],"(","x",")"}]}],TraditionalForm],TraditionalForm,Editable -> True],StyleBox[
+"\"n/a\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[FormBox[FractionBox[
+"1",SqrtBox[RowBox[{SuperscriptBox["a","2"],"-",SuperscriptBox["x","2"]}]]],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{FractionBox["1",SqrtBox[RowBox[{SuperscriptBox["a","2"],"-",SuperscriptBox["x","2"]}]]],RowBox[
+{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[
+FormBox[RowBox[{RowBox[{SuperscriptBox["tan",RowBox[{"-","1"}]],"(",FractionBox["x",
+SqrtBox[RowBox[{SuperscriptBox["a","2"],"-",SuperscriptBox["x","2"]}]]],")"}],"+","C"}],
+TraditionalForm],TraditionalForm,Editable -> True],StyleBox["\"|x| < |a|\"",Italic,
+11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[FormBox[FractionBox["1",RowBox[
+{SuperscriptBox["a","2"],"+",SuperscriptBox["x","2"]}]],TraditionalForm],TraditionalForm,
+Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{FractionBox[
+"1",RowBox[{SuperscriptBox["a","2"],"+",SuperscriptBox["x","2"]}]],RowBox[{"\[DifferentialD]","x"}]}]}],
+HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[
+{FractionBox[RowBox[{SuperscriptBox["tan",RowBox[{"-","1"}]],"(",FractionBox["x",
+"a"],")"}],"a"],"+","C"}],TraditionalForm],TraditionalForm,Editable -> True],StyleBox[
+"\"a != 0\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[FormBox[FractionBox[
+"1",RowBox[{SuperscriptBox["x","2"],"-",SuperscriptBox["a","2"]}]],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{FractionBox["1",RowBox[{RowBox[{"-",SuperscriptBox["a","2"]}],"+",SuperscriptBox[
+"x","2"]}]],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],TraditionalForm,
+Editable -> True],TagBox[FormBox[RowBox[{"C","-",FractionBox[RowBox[{SuperscriptBox[
+"tanh",RowBox[{"-","1"}]],"(",FractionBox["x","a"],")"}],"a"]}],TraditionalForm],
+TraditionalForm,Editable -> True],StyleBox["\"|x| != |a|\"",Italic,11,GrayLevel[0.3`],
+StripOnInput -> False]},{TagBox[FormBox[RowBox[{"sinh","(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{"sinh","(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+",RowBox[{"cosh","(","x",")"}]}],
+TraditionalForm],TraditionalForm,Editable -> True],StyleBox["\"n/a\"",Italic,11,GrayLevel[
+0.3`],StripOnInput -> False]},{TagBox[FormBox[RowBox[{"cosh","(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{"cosh","(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+",RowBox[{"sinh","(","x",")"}]}],
+TraditionalForm],TraditionalForm,Editable -> True],StyleBox["\"n/a\"",Italic,11,GrayLevel[
+0.3`],StripOnInput -> False]},{TagBox[FormBox[RowBox[{"log","(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{"log","(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+",RowBox[{"x"," ",RowBox[
+{"(",RowBox[{RowBox[{"log","(","x",")"}],"-","1"}],")"}]}]}],TraditionalForm],TraditionalForm,
+Editable -> True],StyleBox["\"x > 0\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[
+FormBox[RowBox[{SuperscriptBox["sin",RowBox[{"-","1"}]],"(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{SuperscriptBox["sin",RowBox[{"-","1"}]],"(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],
+HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[
+{"C","+",SqrtBox[RowBox[{"1","-",SuperscriptBox["x","2"]}]],"+",RowBox[{"x"," ",RowBox[
+{SuperscriptBox["sin",RowBox[{"-","1"}]],"(","x",")"}]}]}],TraditionalForm],TraditionalForm,
+Editable -> True],StyleBox["\"|x| <= 1\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[
+FormBox[RowBox[{SuperscriptBox["tan",RowBox[{"-","1"}]],"(","x",")"}],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[
+{RowBox[{SuperscriptBox["tan",RowBox[{"-","1"}]],"(","x",")"}],RowBox[{"\[DifferentialD]","x"}]}]}],
+HoldForm],TraditionalForm],TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[
+{"C","-",RowBox[{FractionBox["1","2"]," ",RowBox[{"log","(",RowBox[{SuperscriptBox[
+"x","2"],"+","1"}],")"}]}],"+",RowBox[{"x"," ",RowBox[{SuperscriptBox["tan",RowBox[
+{"-","1"}]],"(","x",")"}]}]}],TraditionalForm],TraditionalForm,Editable -> True],StyleBox[
+"\"n/a\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]},{TagBox[FormBox[RowBox[
+{SuperscriptBox["\[ExponentialE]","x"]," ","x"}],TraditionalForm],TraditionalForm,
+Editable -> True],TagBox[FormBox[TagBox[RowBox[{"\[Integral]",RowBox[{RowBox[{SuperscriptBox[
+"\[ExponentialE]","x"]," ","x"}],RowBox[{"\[DifferentialD]","x"}]}]}],HoldForm],TraditionalForm],
+TraditionalForm,Editable -> True],TagBox[FormBox[RowBox[{"C","+",RowBox[{SuperscriptBox[
+"\[ExponentialE]","x"]," ",RowBox[{"(",RowBox[{"x","-","1"}],")"}]}]}],TraditionalForm],
+TraditionalForm,Editable -> True],StyleBox["\"n/a\"",Italic,11,GrayLevel[0.3`],StripOnInput -> False]}},
+GridBoxAlignment -> {"Columns" -> {{Center}},"Rows" -> {{Center}}},AutoDelete -> False,
+GridBoxBackground -> {"Columns" -> {{None}},"Rows" -> {RGBColor[0.9`,0.93`,0.98`],{RGBColor[
+0.96`,0.97`,1.`],GrayLevel[1],RGBColor[0.96`,0.97`,1.`],GrayLevel[1],RGBColor[0.96`,
+0.97`,1.`],GrayLevel[1],RGBColor[0.96`,0.97`,1.`],GrayLevel[1],RGBColor[0.96`,0.97`,
+1.`],GrayLevel[1],RGBColor[0.96`,0.97`,1.`],GrayLevel[1],RGBColor[0.96`,0.97`,1.`],GrayLevel[
+1],RGBColor[0.96`,0.97`,1.`],GrayLevel[1],RGBColor[0.96`,0.97`,1.`],GrayLevel[1],RGBColor[
+0.96`,0.97`,1.`],GrayLevel[1],RGBColor[0.96`,0.97`,1.`],GrayLevel[1]}}},GridBoxFrame -> {"Columns" -> {{True}},"Rows" -> {{True}}},
+GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}},FrameStyle -> Directive[
+Thickness[1],GrayLevel[0.75`]],ItemMargins -> {{1.5`,1.5`},{0.8`,0.8`}}],"Grid"]},{TemplateBox[
+{15},"Spacer1"]},{StyleBox["\"Generirano s pomo\[CHacek]jo programa Wolfram Mathematica\"",
+10,Italic,GrayLevel[0.5`],StripOnInput -> False]}},GridBoxAlignment -> {"Columns" -> {{Center}}},
+DefaultBaseStyle -> "Column",GridBoxItemSize -> {"Columns" -> {{Automatic}},"Rows" -> {{Automatic}}}],
+"Column"],StandardForm],"Output",CellLabel -> "Out[40]= ",ExpressionUUID -> "feac7ae4-a89f-4a1c-b526-f7b23837d0c1"]},
+Open],ExpressionUUID -> "96b1d7b9-8727-4a26-a84d-26761a53acac"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "15. for Wolfram Cloud 1.76 (June 11, 2026)"]
